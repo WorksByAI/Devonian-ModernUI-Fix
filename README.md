@@ -5,16 +5,16 @@
 ## 适用版本
 
 - Minecraft **26.1.2 / Fabric**
-- Devonian **1.32.9**
+- Devonian **1.32.9 / 1.33.9 / 1.34.9**（当前 26.1.x 最新正式版）
 - Modern UI **3.13.0.5**
 - Fabric Loader **0.19.2 或以上**、Java **25 或以上**
 
-补丁的依赖声明锁定上述两个 Mod 版本。升级它们前先移除此补丁，再检查是否需要新版兼容补丁。
+依赖声明仅允许上述已验证版本。其他版本需要先检查其兼容性。
 
 ## 安装
 
 1. 退出 Minecraft。
-2. 将 `devonian-modernui-fix-1.0.0+26.1.2.jar` 放进当前游戏实例的 `mods` 文件夹。
+2. 移除旧版补丁，将 `devonian-modernui-fix-1.0.1+26.1.2.jar` 放进当前游戏实例的 `mods` 文件夹。
 3. 保留原有 Devonian 与 Modern UI，保持 Modern Text Engine 开启，字体设置沿用现在的配置。
 4. 重新启动游戏，查看原先出现固定方框的物品悬停说明。
 
@@ -35,7 +35,7 @@
 
 ## 技术说明
 
-Devonian 1.32.9 的 `GuiTextRenderStateMixin.devonian$textFloatPosition` 收到 `Operation`，但直接调用 `Font.prepareText`，丢弃了 Modern UI 的重定向链。此补丁只替换该直接调用，改为 `original.call(...)`，保留它计算出的坐标和其余参数。
+Devonian 1.32.9、1.33.9、1.34.9 的 `GuiTextRenderStateMixin.devonian$textFloatPosition` 收到 `Operation`，但直接调用 `Font.prepareText`，丢弃了 Modern UI 的重定向链。此补丁只替换该直接调用，改为 `original.call(...)`，保留它计算出的坐标和其余参数。
 
 补丁在 Mixin 合并后确认目标方法的来源、名称、完整签名与唯一直接调用，再执行变换。若目标结构不匹配，会明确报错，避免修改未知方法。它不包含 Devonian 或 Modern UI 的类，也不替换全局字体渲染器。
 
@@ -62,5 +62,14 @@ python verification/prepare_fixtures.py "路径/ModernUI.jar" "路径/devonian.j
 .\gradlew.bat -p verification runVerify -Pbaseline -x downloadAssets
 .\gradlew.bat -p verification runVerify -PtextEngineDisabled -x downloadAssets
 ```
+
+也可一次验证三个已发布版本及较新 Loader：
+
+```powershell
+python verification/run_matrix.py "路径/ModernUI.jar" "路径/devonian-1.32.9.jar" "路径/devonian-1.33.9.jar" "路径/devonian-1.34.9.jar"
+python -m unittest discover -s verification -p "test_*.py"
+```
+
+1.0.1 的官方版本来源、验证范围和结果见 [TESTING.md](TESTING.md)。
 
 测试只提取原始类并替换测试用元数据，不运行原 Mod 入口，不修改输入 JAR。原 Mod 与测试依赖不随本补丁分发。

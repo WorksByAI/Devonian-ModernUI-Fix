@@ -1,12 +1,15 @@
 plugins { id 'net.fabricmc.fabric-loom' version '1.16.3' }
 
-version = '1.0.0+26.1.2'
+version = '1.0.1+26.1.2'
 group = 'dev.devonianmodernuifix'
 base { archivesName = 'devonian-modernui-fix' }
 
 dependencies {
     minecraft 'com.mojang:minecraft:26.1.2'
     implementation 'net.fabricmc:fabric-loader:0.19.2'
+    testImplementation platform('org.junit:junit-bom:5.13.4')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 processResources {
@@ -28,3 +31,9 @@ tasks.withType(Jar).configureEach {
     reproducibleFileOrder = true
 }
 jar { from('LICENSE') }
+sourcesJar { from('LICENSE') }
+tasks.named('test', Test) {
+    useJUnitPlatform()
+    dependsOn 'jar'
+    systemProperty 'fix.binaryJar', tasks.named('jar', Jar).get().archiveFile.get().asFile.absolutePath
+}

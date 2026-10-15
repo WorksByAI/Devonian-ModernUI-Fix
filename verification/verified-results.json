@@ -1,0 +1,199 @@
+{
+  "patchSha256": "72ec708c3c5af979a135ef3235f060d487cce99bd5127167b4ecc40a812ac869",
+  "javaRegressionTests": 6,
+  "pythonFixtureTests": 3,
+  "mixinAssertions": 480,
+  "visualRenderingTested": false,
+  "runs": [
+    {
+      "devonian": "1.32.9",
+      "mode": "baseline",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.32.9",
+          "sha256": "280a9ed48925758c230a37616f37e4944b6416d003dbb8dd6e297fb1fd0ab6c4",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.32.9",
+      "mode": "patched",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.32.9",
+          "sha256": "280a9ed48925758c230a37616f37e4944b6416d003dbb8dd6e297fb1fd0ab6c4",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.32.9",
+      "mode": "disabled",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.32.9",
+          "sha256": "280a9ed48925758c230a37616f37e4944b6416d003dbb8dd6e297fb1fd0ab6c4",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.33.9",
+      "mode": "baseline",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.33.9",
+          "sha256": "d53c736f1c5a0194bf87a5a2c9a31e624cc2f0f71348ee12243fb29b1f8ee00d",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.33.9",
+      "mode": "patched",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.33.9",
+          "sha256": "d53c736f1c5a0194bf87a5a2c9a31e624cc2f0f71348ee12243fb29b1f8ee00d",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.33.9",
+      "mode": "disabled",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.33.9",
+          "sha256": "d53c736f1c5a0194bf87a5a2c9a31e624cc2f0f71348ee12243fb29b1f8ee00d",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.34.9",
+      "mode": "baseline",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.34.9",
+          "sha256": "d02179a22923c4b233f1751cf02227b3e237d22ffc96df61e86400440ee3ffb7",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.34.9",
+      "mode": "patched",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.34.9",
+          "sha256": "d02179a22923c4b233f1751cf02227b3e237d22ffc96df61e86400440ee3ffb7",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.34.9",
+      "mode": "disabled",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.34.9",
+          "sha256": "d02179a22923c4b233f1751cf02227b3e237d22ffc96df61e86400440ee3ffb7",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    },
+    {
+      "devonian": "1.34.9",
+      "mode": "loader-0.19.5",
+      "assertions": 48,
+      "inputs": [
+        {
+          "id": "modernui",
+          "version": "3.13.0.5",
+          "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f",
+          "mixinSha256": "bbce2d7041e66748a6fa959eb54d870aa6b1b8cbd34711dc691a2e0520898c42"
+        },
+        {
+          "id": "devonian",
+          "version": "1.34.9",
+          "sha256": "d02179a22923c4b233f1751cf02227b3e237d22ffc96df61e86400440ee3ffb7",
+          "mixinSha256": "a2cf95c0562b91dbbaffd095f3bb032b1a14c9ef54ca7a2569eaba346096e9b7"
+        }
+      ]
+    }
+  ]
+}

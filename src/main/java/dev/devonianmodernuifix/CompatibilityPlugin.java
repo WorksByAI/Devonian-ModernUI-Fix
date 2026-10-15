@@ -87,7 +87,7 @@ public final class CompatibilityPlugin implements IMixinConfigPlugin {
 
     private static IllegalStateException unsupported(String detail) {
         return new IllegalStateException("Devonian Modern UI Text Fix: " + detail
-                + ". This patch supports Devonian 1.32.9 and Modern UI 3.13.0.5 on Minecraft 26.1.2."
+                + ". This patch supports Devonian 1.32.9, 1.33.9 and 1.34.9 with Modern UI 3.13.0.5 on Minecraft 26.1.2."
                 + " Remove this compatibility patch if another mod has changed that wrapper.");
     }
 

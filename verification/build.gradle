@@ -6,7 +6,7 @@ dependencies {
     minecraft 'com.mojang:minecraft:26.1.2'
     implementation "net.fabricmc:fabric-loader:${providers.gradleProperty('loaderVersion').getOrElse('0.19.2')}"
     implementation files('libs/modernui-fixture.jar', 'libs/devonian-fixture.jar')
-    if (!baseline) implementation files('../build/libs/devonian-modernui-fix-1.0.0+26.1.2.jar')
+    if (!baseline) implementation files('../build/libs/devonian-modernui-fix-1.0.1+26.1.2.jar')
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_25
@@ -17,7 +17,8 @@ loom {
     runs {
         verify {
             client()
-            runDir baseline ? 'run-baseline' : (disabled ? 'run-disabled' : 'run-patched')
+            def mode = baseline ? 'baseline' : (disabled ? 'disabled' : 'patched')
+            runDir "run-${providers.gradleProperty('verificationLabel').getOrElse('current')}-${mode}"
             vmArg "-Dfix.test.baseline=${baseline}"
             vmArg "-Dfix.test.disabled=${disabled}"
             vmArg '-Dmixin.debug.export=true'

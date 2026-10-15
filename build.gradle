@@ -36,4 +36,5 @@ tasks.named('test', Test) {
     useJUnitPlatform()
     dependsOn 'jar'
     systemProperty 'fix.binaryJar', tasks.named('jar', Jar).get().archiveFile.get().asFile.absolutePath
+    systemProperty 'fix.projectDir', projectDir.absolutePath
 }

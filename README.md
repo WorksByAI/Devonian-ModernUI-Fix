@@ -1,5 +1,7 @@
 # Devonian Modern UI Text Fix
 
+[下载补丁](https://github.com/WorksByAI/Devonian-ModernUI-Fix/releases/latest) · [报告问题](https://github.com/WorksByAI/Devonian-ModernUI-Fix/issues)
+
 独立的客户端兼容补丁，修复 Devonian 绕过 Modern UI 文字处理而使 `&k` 混淆文字显示为固定方框的问题。保留 Devonian 的文字小数坐标调整，并把其调用交回原有的文字处理链。
 
 ## 适用版本

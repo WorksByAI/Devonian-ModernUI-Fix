@@ -8,3 +8,4 @@ verification/*-build.log
 verification/__pycache__/
 .gradle-user-home/
 logs/
+*.log

@@ -29,6 +29,17 @@ class CompatibilityPluginTest {
         assertEquals(HANDLER,bridge.desc);assertSame(tail,bridge.getNext());assertTrue(method.maxStack>=9);
     }
     @Test void ignoresUnrelatedGameTargets(){var node=target();new CompatibilityPlugin().postApply("other.Target",node,"fix",null);assertTrue(node.methods.isEmpty());}
+    @Test void sourceProjectHasPortablePinnedWrapperAndPublicDownloadLinks()throws Exception{
+        var root=java.nio.file.Path.of(System.getProperty("fix.projectDir"));
+        var wrapper=java.nio.file.Files.readString(root.resolve("gradlew"));
+        assertTrue(wrapper.startsWith("#!/bin/sh"));assertFalse(wrapper.contains("\r"),"Unix launcher must retain LF line endings");
+        var properties=new java.util.Properties();
+        try(var input=java.nio.file.Files.newInputStream(root.resolve("gradle/wrapper/gradle-wrapper.properties"))){properties.load(input);}
+        assertEquals("https://services.gradle.org/distributions/gradle-9.5.1-bin.zip",properties.getProperty("distributionUrl"));
+        assertEquals("bafc141b619ad6350fd975fc903156dd5c151998cc8b058e8c1044ab5f7b031f",properties.getProperty("distributionSha256Sum"));
+        var readme=java.nio.file.Files.readString(root.resolve("README.md"));
+        assertTrue(readme.contains("https://github.com/WorksByAI/Devonian-ModernUI-Fix/releases/latest"));
+    }
     @Test void refusesMissingOrAmbiguousWrappers(){
         var node=target();assertThrows(IllegalStateException.class,()->new CompatibilityPlugin().postApply(TARGET,node,"fix",null));
         wrapper(node);wrapper(node);assertThrows(IllegalStateException.class,()->new CompatibilityPlugin().postApply(TARGET,node,"fix",null));

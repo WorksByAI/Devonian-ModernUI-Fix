@@ -1,6 +1,6 @@
 {
   "patchSha256": "72ec708c3c5af979a135ef3235f060d487cce99bd5127167b4ecc40a812ac869",
-  "javaRegressionTests": 6,
+  "javaRegressionTests": 7,
   "pythonFixtureTests": 3,
   "mixinAssertions": 480,
   "visualRenderingTested": false,

@@ -15,6 +15,6 @@ Each run contains 48 assertions: 480 in total. Verification uses the original re
 
 The Modern UI GPU/layout endpoint is replaced by a parameter-recording boundary. This proves the repaired call chain but does not constitute visual testing of the user's full modpack.
 
-Additionally, six Java regression tests and three Python fixture tests pass. These check dependency declarations, operation-slot forwarding, rejection of unknown wrappers, distribution contents, original class preservation and unsupported-version rejection.
+Additionally, seven Java regression tests and three Python fixture tests pass. These check dependency declarations, operation-slot forwarding, rejection of unknown wrappers, distribution contents, original class preservation, unsupported-version rejection and the portable source project's pinned wrapper/download links.
 
 Original third-party JARs and extracted fixtures are local verification dependencies and are not included in the patch or source delivery. Official release URLs/digests and summarized results are recorded in `verification/official-releases.json` and `verification/verified-results.json`.

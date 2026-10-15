@@ -1,0 +1,12 @@
+[
+  {
+    "id": "modernui",
+    "version": "3.13.0.5",
+    "sha256": "f5517c6481f7a2feb478362125d6ab4958fd992f5283555c4932ff955d9a906f"
+  },
+  {
+    "id": "devonian",
+    "version": "1.32.9",
+    "sha256": "280a9ed48925758c230a37616f37e4944b6416d003dbb8dd6e297fb1fd0ab6c4"
+  }
+]

@@ -1,0 +1,27 @@
+plugins { id 'net.fabricmc.fabric-loom' version '1.16.3' }
+version = '1.0.0'
+def baseline = project.hasProperty('baseline')
+def disabled = project.hasProperty('textEngineDisabled')
+dependencies {
+    minecraft 'com.mojang:minecraft:26.1.2'
+    implementation "net.fabricmc:fabric-loader:${providers.gradleProperty('loaderVersion').getOrElse('0.19.2')}"
+    implementation files('libs/modernui-fixture.jar', 'libs/devonian-fixture.jar')
+    if (!baseline) implementation files('../build/libs/devonian-modernui-fix-1.0.0+26.1.2.jar')
+}
+java {
+    sourceCompatibility = JavaVersion.VERSION_25
+    targetCompatibility = JavaVersion.VERSION_25
+}
+tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
+loom {
+    runs {
+        verify {
+            client()
+            runDir baseline ? 'run-baseline' : (disabled ? 'run-disabled' : 'run-patched')
+            vmArg "-Dfix.test.baseline=${baseline}"
+            vmArg "-Dfix.test.disabled=${disabled}"
+            vmArg '-Dmixin.debug.export=true'
+            vmArg '-Dmixin.debug.export.filter=net.minecraft.client.renderer.state.gui.GuiTextRenderState'
+        }
+    }
+}

@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "verification.mixin",
+  "plugin": "verification.BoundaryPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "priority": 100,
+  "client": ["BoundaryMixin"]
+}

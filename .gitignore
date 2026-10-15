@@ -1,0 +1,7 @@
+.gradle/
+build/
+verification/.gradle/
+verification/build/
+verification/libs/
+verification/run-*/
+verification/*-build.log

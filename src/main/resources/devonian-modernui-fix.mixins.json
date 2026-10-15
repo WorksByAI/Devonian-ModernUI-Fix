@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "minVersion": "0.8.7",
+  "package": "dev.devonianmodernuifix.mixin",
+  "plugin": "dev.devonianmodernuifix.CompatibilityPlugin",
+  "compatibilityLevel": "JAVA_25",
+  "priority": 900,
+  "client": ["GuiTextCompatibilityMixin"]
+}

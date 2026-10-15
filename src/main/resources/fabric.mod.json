@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "devonian_modernui_fix",
+  "version": "${version}",
+  "name": "Devonian Modern UI Text Fix",
+  "description": "Restores Modern UI text rendering through Devonian's GUI text wrapper, including obfuscated tooltip text.",
+  "environment": "client",
+  "license": "MIT",
+  "mixins": ["devonian-modernui-fix.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.2",
+    "minecraft": "26.1.2",
+    "java": ">=25",
+    "devonian": "1.32.9",
+    "modernui": "3.13.0.5"
+  }
+}
